@@ -10,9 +10,13 @@
 			.state('landing',{
 				url: '/',
 				templateUrl: '/templates/landing.html'
+			})
+			.state('collection',{
+				url: '/collection',
+				templateUrl: '/templates/collection.html'
 			});
 	}
 	angular
-		.module('blocJames', ['ui.router'])
+		.module('blocJams', ['ui.router'])
 		.config(config);
 })();
