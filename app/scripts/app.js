@@ -15,6 +15,8 @@
 				url: '/collection',
 				templateUrl: '/templates/collection.html'
 			});
+
+			// need to add .state album 
 	}
 	angular
 		.module('blocJams', ['ui.router'])
