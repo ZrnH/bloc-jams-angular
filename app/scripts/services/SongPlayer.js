@@ -26,6 +26,7 @@
 			});
 
 			currentSong = song;
+
 		};
 		/** 
 		* @function playSong
@@ -37,6 +38,9 @@
 			currentBuzzObject.play();
 			song.playing = true;
 		};
+
+		}
+
 
 		SongPlayer.play = function(song) {
 			if (currentSong !== song) {
