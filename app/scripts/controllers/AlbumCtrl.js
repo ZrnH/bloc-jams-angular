@@ -1,5 +1,5 @@
 (function() {
-	function AlbumCtrl(album) {
+	function AlbumCtrl(Fixtures) {
 		this.albumData = Fixtures.getAlbum();
 		//this.albumData = angular.copy(albumPicasso);
 		}
