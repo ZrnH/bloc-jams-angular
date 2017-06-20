@@ -24,14 +24,24 @@
 				formats: ['mp3'],
 				preload: true
 			});
-		}
+
+			currentSong = song;
+		};
+		/** 
+		* @function playSong
+		* @desc plays currentBuzzObject and sets song.playing boolean to TRUE
+		* @param {Object} song
+		*/		
+		
+		var playSong = function(song) {
+			currentBuzzObject.play();
+			song.playing = true;
+		};
 
 		SongPlayer.play = function(song) {
 			if (currentSong !== song) {
 				setSong(song);
-// play current buzz object
-			currentBuzzObject.play();
-			song.playing = true
+				playSong(song);
 // check if current song matches clicked song, and if that song is paused. if paused, resume playing.	
 			} else if (currentSong === song) {
 				if (currentBuzzObject.isPaused()) {
