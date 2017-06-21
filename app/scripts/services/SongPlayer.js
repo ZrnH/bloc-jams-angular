@@ -1,5 +1,5 @@
 (function() {
-	function SongPlayer() {
+	function SongPlayer(Fixtures) {
 		var SongPlayer = {};
 
 		var currentSong = null;
