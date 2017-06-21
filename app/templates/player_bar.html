@@ -1,4 +1,4 @@
-          <section class="player-bar" ng-controller='PlayerBarCtrl as playerBar'>
+          <section class="player-bar" ng-controller="PlayerBarCtrl as playerBar">
               <div class="container">
                   <div class="control-group main-controls">
                       <a class="previous">
@@ -6,12 +6,12 @@
                       </a>
                       <a class="play-pause">
                           <span class="ion-play"
-                                ng-show='!song.playing'
-                                ng-click='playerBar.songPlayer.play(song)'
+                                ng-show="!song.playing"
+                                ng-click="playerBar.songPlayer.play(song)"
                           ></span>
-                          <span class='ion-pause'
-                                ng-show='song.playing'
-                                ng-click='playerBar.songPlayer.pause(song)'
+                          <span class="ion-pause"
+                                ng-show="song.playing"
+                                ng-click="playerBar.songPlayer.pause(song)"
                           ></span>
                       </a>
                       <a class="next">
