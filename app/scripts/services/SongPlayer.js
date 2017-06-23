@@ -16,10 +16,19 @@
 		* @param {Object} song
 		**/
 
+		/** 
+		* @function stopSong
+		* @desc Stops currently playing song and sets playing value to null
+		* @param {Object} song
+		**/		
+		var stopSong = function(song) {
+			currentBuzzObject.stop();
+			SongPlayer.currentSong.playing = null;
+		}
+
 		var setSong = function(song) {
 			if (currentBuzzObject) {
-				currentBuzzObject.stop();
-				SongPlayer.currentSong.playing = null;
+				stopSong(song);
 			}
 
 			currentBuzzObject = new buzz.sound(song.audioURL, {
@@ -30,6 +39,7 @@
 			SongPlayer.currentSong = song;
 
 		};
+
 
 
 		/** 
@@ -62,18 +72,14 @@
 
 		SongPlayer.play = function(song) {
 			song = song || SongPlayer.currentSong;
-/*			if(!song) {
-				playSong(SongPlayer.currentSong)
-			}*/
 			
 			if (SongPlayer.currentSong !== song) {
 				setSong(song);
 				playSong(song);
-// check if current song matches clicked song, and if that song is paused. if paused, resume playing.	
+
 			} else if (SongPlayer.currentSong === song) {
 				if (currentBuzzObject.isPaused()) {
 					playSong(song);
-// update song.playing boolean for reference in album.html
 					
 				}
 			}
@@ -86,7 +92,7 @@
 		};
 
 		/** 
-		* @desc Method to define previous song index via current song
+		* @desc Method to define previous song index via current song and play
 		* @type {Object}
 		*/	
 		SongPlayer.previous = function() {
@@ -94,8 +100,7 @@
 			currentSongIndex--;
 
 			if(currentSongIndex < 0) {
-				currentBuzzObject.stop();
-				SongPlayer.currentSong.playing = null;
+				stopSong(song);
 			} else {
 				var song = currentAlbum.songs[currentSongIndex];
 				setSong(song);
@@ -104,6 +109,11 @@
 
 
 		};
+
+		/** 
+		* @desc Method to define next song index via current song and play
+		* @type {Object}
+		*/
 
 		SongPlayer.next = function() {
 			var currentSongIndex = getSongIndex(SongPlayer.currentSong);
@@ -118,6 +128,7 @@
 				}
  
 		};
+
 
 		return SongPlayer;
 	
