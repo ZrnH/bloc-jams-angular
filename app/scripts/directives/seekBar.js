@@ -3,9 +3,10 @@
 		var calculatePercent = function(seekBar, event) {
 			var offsetX = event.pageX - seekBar.offset().left;
 			var seekBarWidth = seekBar.width();
-			var offsetXpercent = offsetX / seekBarWidth; 
-			offsetXpercent = Math.max(0, offsetXpercent);
-			offsetXpercent = Math.min(1, offsetXpercent);
+			var offsetXPercent = offsetX / seekBarWidth; 
+			offsetXPercent = Math.max(0, offsetXPercent);
+			offsetXPercent = Math.min(1, offsetXPercent);
+			return offsetXPercent;
 		};
 
 		return {
