@@ -38,6 +38,12 @@
 
 			SongPlayer.currentSong = song;
 
+			/** 
+			* @desc Curent playback time (in seconds) of currently playing song
+			* @type {Number}
+			*/
+			SongPlayer.currentTime = null;
+
 		};
 
 
