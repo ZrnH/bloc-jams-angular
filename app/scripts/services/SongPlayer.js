@@ -153,6 +153,38 @@
 			}
 		};
 
+		/** 
+		* @desc Volume object to store and update volume of currently playing song
+		* @type {Object}
+		*/
+
+		SongPlayer.currentVolume = null;
+
+		/** 
+		* @function getVolume
+		* @des If any song is playing, get the volume and assign to SongPlayer.currentVolume
+		*/
+
+		SongPlayer.getVolume = function(){
+			if (currentBuzzObject) {
+				SongPlayer.currentVolume = currentBuzzObject.getVolume();
+			}
+		}
+
+		/** 
+		* @function setVolume
+		* @des Set current volume of currently playing or paused song if changed
+		* @param {Number} volume
+		*/
+
+		SongPlayer.setVolume = function(newVolume){
+			if (currentBuzzObject) {
+				currentBuzzObject.setVolume(newVolume);
+			}
+		};
+
+
+
 
 		return SongPlayer;
 	
